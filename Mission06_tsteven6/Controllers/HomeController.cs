@@ -23,6 +23,16 @@ namespace Mission06_tsteven6.Controllers
             return View();
         }
 
+        public IActionResult MyPodcasts()
+        {
+            return View();
+        }
+
+        public IActionResult MovieDB()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
