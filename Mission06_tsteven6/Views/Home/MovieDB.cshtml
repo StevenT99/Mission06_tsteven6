@@ -4,3 +4,44 @@
 @{
     ViewData["Title"] = "Movie Database Form";
 }
+@model Mission06_tsteven6.Models.ApplicationResponse
+
+<h1>Fill Out Movie Information</h1>
+
+<div>
+    <form method="post">
+        <label asp-for="Category">Category:</label>
+        <input asp-for="Category" /><br />
+
+        <label asp-for="Title">Title:</label>
+        <input asp-for="Title" /><br />
+
+        <label asp-for="Year">Year:</label>
+        <input asp-for="Year" /><br />
+
+        <label asp-for="Director">Director:</label>
+        <input asp-for="Director" /><br />
+
+        <label asp-for="Rating">Rating:</label>
+        <select asp-for="Rating">
+            <option value="G">G</option>
+            <option value="PG">PG</option>
+            <option value="PG-13">PG-13</option>
+            <option value="R">R</option>
+        </select><br />
+
+        <label asp-for="Edited">Edited:</label>
+        <select asp-for="Edited">
+            <option value="True">True</option>
+            <option value="False">False</option>
+        </select><br />
+
+        <label asp-for="Lent">Lent:</label>
+        <input asp-for="Lent" /><br />
+
+        <label asp-for="Notes">Notes:</label>
+        <input asp-for="Notes" /><br /><br />
+
+        <button type="submit">Submit Movie</button><br />
+    </form>
+</div>

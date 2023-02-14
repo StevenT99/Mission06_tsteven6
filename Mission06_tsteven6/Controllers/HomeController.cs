@@ -12,10 +12,11 @@ namespace Mission06_tsteven6.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private MovieContext _blahContext { get; set; }
+        public HomeController(ILogger<HomeController> logger, MovieContext someName)
         {
             _logger = logger;
+            _blahContext = someName;
         }
 
         public IActionResult Index()
@@ -27,12 +28,18 @@ namespace Mission06_tsteven6.Controllers
         {
             return View();
         }
-
+        [HttpGet]
         public IActionResult MovieDB()
         {
             return View();
         }
-
+        [HttpPost]
+        public IActionResult MovieDB(ApplicationResponse ar)
+        {
+            _blahContext.Add(ar);
+            _blahContext.SaveChanges();
+            return View("Confirmation", ar);
+        }
         public IActionResult Privacy()
         {
             return View();
