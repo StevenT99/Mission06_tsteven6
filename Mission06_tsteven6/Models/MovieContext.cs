@@ -14,15 +14,33 @@ namespace Mission06_tsteven6.Models
         }
 
         public DbSet<ApplicationResponse> Responses { get; set; }
+        public DbSet<Category> Category { get; set; }
 
         protected override void OnModelCreating(ModelBuilder mb)
         {
+            mb.Entity<Category>().HasData(
+                new Category { CategoryId = 1, Categoryname = "Action" },
+                new Category { CategoryId = 2, Categoryname = "Animation"},
+                new Category { CategoryId = 3, Categoryname = "Comedy" },
+                new Category { CategoryId = 4, Categoryname = "Crime" },
+                new Category { CategoryId = 5, Categoryname = "Drama" },
+                new Category { CategoryId = 6, Categoryname = "Fantasy" },
+                new Category { CategoryId = 7, Categoryname = "Historical" },
+                new Category { CategoryId = 8, Categoryname = "Horror" },
+                new Category { CategoryId = 9, Categoryname = "Romance" },
+                new Category { CategoryId = 10, Categoryname = "Science Fiction" },
+                new Category { CategoryId = 11, Categoryname = "Thriller" },
+                new Category { CategoryId = 12, Categoryname = "Western" },
+                new Category { CategoryId = 13, Categoryname = "Sports" },
+                new Category { CategoryId = 14, Categoryname = "Other" }
+
+                );
             mb.Entity<ApplicationResponse>().HasData(
 
                 new ApplicationResponse
                 {
                     ApplicationId = 1,
-                    Category = "Drama/Crime",
+                    CategoryId = 5,
                     Title = "Shawshank Redemption",
                     Year = 1994,
                     Director = "Frank Darabont",
@@ -36,7 +54,7 @@ namespace Mission06_tsteven6.Models
                 new ApplicationResponse
                 {
                     ApplicationId = 2,
-                    Category = "Drama/Music",
+                    CategoryId = 5,
                     Title = "Whiplash",
                     Year = 2014,
                     Director = "Damien Chazelle",
@@ -50,7 +68,7 @@ namespace Mission06_tsteven6.Models
                 new ApplicationResponse
                 {
                     ApplicationId = 3,
-                    Category = "Sport/Drama",
+                    CategoryId = 13,
                     Title = "Creed",
                     Year = 2015,
                     Director = "Frank Darabont",
